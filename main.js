@@ -3,11 +3,14 @@
 const electron = require('electron')
 const app = electron.app
 const BrowserWindow = electron.BrowserWindow
+const globalShortcut = electron.globalShortcut
 const path = require('path')
 const url = require('url')
 
 
 let mainWindow
+
+
 
 function createWindow () {
     mainWindow = new BrowserWindow({width: 800, height: 600})
@@ -19,12 +22,34 @@ function createWindow () {
 
     mainWindow.on('closed', function() {
         mainWindow = null
-        
+
     })
 
 }
 
 app.on('ready', createWindow)
+
+app.on('ready', () => {
+  // Register a 'CommandOrControl+Y' shortcut listener.
+  const ret = globalShortcut.register('CommandOrControl+Y', () => {
+    console.log('pressed');
+    // Do stuff when Y and either Command/Control is pressed.
+    //app.quit();
+  })
+  if (!ret) {
+    console.log('registration failed')
+  }
+  console.log(globalShortcut.isRegistered('CommandOrControl+Y'))
+
+})
+
+app.on('will-quit', () => {
+  // Unregister a shortcut.
+  globalShortcut.unregister('CommandOrControl+Y')
+
+  // Unregister all shortcuts.
+  globalShortcut.unregisterAll()
+})
 
 app.on('window-all-closed', function () {
     if (process.platform !== 'darwin') {

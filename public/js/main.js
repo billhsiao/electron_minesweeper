@@ -128,7 +128,7 @@ function handleClick(evt) {
     openControlFlow(cell);
     }
     console.log(cell);
-    
+
     renderSt();
 };
 function adjacenters(x, y) {
@@ -156,8 +156,8 @@ function adjacenters(x, y) {
         y === 0 ? [adj.rc, adj.rt, adj.ct] : [adj.lc, adj.lt, adj.ct, adj.rt, adj.rc] :
         y === 0 ?
         x === maxL ? [adj.rc, adj.rt, adj.ct] :
-        x === 0 ? [adj.rb, adj.rc, adj.cb] : [adj.rc, adj.rt, adj.rb, adj.ct, adj.cb] :
-        Object.values(adj)
+        x === 0 ? [adj.rb, adj.rc, adj.cb] : [adj.rc, adj.rt, adj.rb, adj.ct, adj.cb] : [adj.lc, adj.lt, adj.lb, adj.rc, adj.rt, adj.rb, adj.ct, adj.cb]
+        //Object.values(adj)
       );
   return neighbors
 }
@@ -182,7 +182,7 @@ function flagHandler(evt) {
         player.flag = true;
         return 1;
     } else if (flag === "flag on") {
-         evt.target.textContent = 'flagOff';   
+         evt.target.textContent = 'flagOff';
         flag =  evt.target.textContent;
         player.flag = false;
         return 0;
@@ -192,4 +192,4 @@ function flagHandler(evt) {
 
 function reset() {
     game = null;
-}
+}c
