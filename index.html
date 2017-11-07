@@ -1,1 +1,40 @@
-<h1>minesweeper</h1>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+   <link href="https://fonts.googleapis.com/css?family=Roboto+Mono|Yellowtail" rel="stylesheet">
+   <!--Import Google Icon Font-->
+         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+         <!--Import materialize.css-->
+         <link type="text/css" rel="stylesheet" href="./materialize/css/materialize.min.css"  media="screen,projection"/>
+        <link rel="stylesheet" href="./public/css/styles.css">
+
+         <!--Let browser know website is optimized for mobile-->
+         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+</head>
+<body>
+    <h1>minesweeper</h1>
+    <div id="settings">
+      <button id="flag">flag on</button>
+      <button id="flagoff">flag off</button>
+      <button id="play_button">play</button>
+      <button id="button">make table</button>
+      <input type="number" value="50" id="minecount_input" placeholder="Set Mines"><input type="number" value="12" id="width_input" placeholder="Set Width">
+      <input type="number" value="12" id="length_input" placeholder="Set Length">
+
+  </div>
+
+      <div id="gameLocation" class="noselect"></div>
+
+
+
+    <script src="./public/js/cell.js"></script>
+    <script src="./public/js/board.js"></script>
+    <script src="./public/js/main.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+      <script type="text/javascript" src="./materialize/js/materialize.min.js"></script>
+
+</body>

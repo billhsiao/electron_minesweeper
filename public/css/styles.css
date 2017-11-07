@@ -1,0 +1,73 @@
+body {
+  margin: 0 auto;
+  max-width: 600px;
+  text-align: center;
+}
+div {
+  margin: 0px auto;
+
+}
+
+table {
+    table-layout: fixed;
+    overflow: hidden;
+  margin-left: auto;
+  margin-right: auto;
+    font-size: 10px;
+  border-spacing: 0px;
+  border-collapse: separate;
+  text-align: center;
+}
+td {
+    overflow: hidden;
+    text-align: center;
+    font-size: 9x;
+    width: 18px;
+    height: 18px;
+    background-color: red;
+    font-family: 'Roboto Mono', monospace;
+    color: black;
+}
+td:hover {
+    outline: 2px solid blue;
+}
+trow {
+  height: 1px;
+}
+
+input {
+  float:left;
+    
+}
+
+
+#settings {
+  text-align: left;
+    font-size: 10px;
+}
+.gameLocation {
+    font-size: 10px;
+}
+.flagged {
+    background-color: blue;
+    color: white;
+}
+
+.bomb {
+    background-color: yellow;
+}
+
+.revealed {
+    background-color: white;
+}
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+
