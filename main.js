@@ -6,14 +6,14 @@ const BrowserWindow = electron.BrowserWindow
 const globalShortcut = electron.globalShortcut
 const path = require('path')
 const url = require('url')
-
+//const minesweeper = require('./')
 
 let mainWindow
 
 
 
 function createWindow () {
-    mainWindow = new BrowserWindow({width: 800, height: 600})
+    mainWindow = new BrowserWindow({width: 250, height: 275})
     mainWindow.loadURL(url.format({
         pathname: path.join(__dirname, 'index.html'),
         protocol: 'file:',
