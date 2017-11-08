@@ -6,6 +6,7 @@ const BrowserWindow = electron.BrowserWindow
 const globalShortcut = electron.globalShortcut
 const path = require('path')
 const url = require('url')
+//const game = require('./')
 //const minesweeper = require('./')
 
 let mainWindow
