@@ -2,20 +2,28 @@
 
 
 var game, player, danger = [];
+
+function render(object) {
+  object.updateState(object.id)
+}
+var mineCount = Symbol('mineCount')
 const props = {
   mineCount: 10,
   widthInput: 10,
   lengthInput: 10
 }
+document.getElementById('gameFace').addEventListener('click', reset);
 initialize();
 
 function initialize() {
+  generateTable();
   reset();
 }
 function reset() {
   game = new Board(props.widthInput, props.lengthInput)
+  danger = [];
   mines(props.mineCount, props.widthInput * props.lengthInput)
-  createCells()
+  game.field.forEach(x=>x.forEach(y=>render(y)));
 }
 function mines(p) {
     if (p === 0) {
@@ -42,16 +50,14 @@ function c(x, y) {
 }
 
 function gameOver() {
-    // console.log('game over')
-    //game = null;
     adjCellOpen(openBombs, danger);
-    //return game;
     Object.freeze(game);
 }
 function openBombs(cell) {
   cell.revealed = true;
   cell.textContent = 'B';
   cell.htmlClass = 'bomb';
+  render(cell);
 
 }
 function winCheck() {
@@ -59,7 +65,7 @@ function winCheck() {
         console.log('You Win!')
     }
 }
-function createCells() {
+function generateTable() {
         var table = document.createElement('table');
         var div = document.getElementById('gameLocation');
         for (let i = 0; i < props.widthInput; i++) {
@@ -74,16 +80,16 @@ function createCells() {
         div.appendChild(table)
         table.addEventListener('click', handleClick);
 }
-function renderSt() {
-        for (let i = 0; i < props.widthInput; i++) {
-            for (let j = 0; j < props.lengthInput; j++ ) {
-                let td = document.getElementById(i * props.widthInput + j);
-                let cell = c(i, j);
-                td.textContent = cell.textContent;
-                td.className = cell.htmlClass;
-        }
-    }
-}
+// function renderSt() {
+//         for (let i = 0; i < props.widthInput; i++) {
+//             for (let j = 0; j < props.lengthInput; j++ ) {
+//                 let td = document.getElementById(i * props.widthInput + j);
+//                 let cell = c(i, j);
+//                 td.textContent = cell.textContent;
+//                 td.className = cell.htmlClass;
+//         }
+//     }
+// }
 function openControlFlow(cell) {
     console.log(`opening ${cell}`)
     if (cell.revealed) {
@@ -94,27 +100,32 @@ function openControlFlow(cell) {
         cell.htmlClass = 'revealed';
         game.revealed = game.revealed + 1;
         if (cell.number === 0) {
+          render(cell);
             adjCellOpen(openControlFlow, adjacenters(...parse(cell.id)));
         }
         if (!cell.mine) {
           cell.textContent = cell.number;
+          render(cell);
         }
         if (cell.mine) {
             cell.textContent = "B";
-            cell.htmlClass = 'bomb';
+            cell.htmlClass = 'focusBomb';
+            render(cell);
             gameOver();
         }
     }
 }
 function flagFlow(cell) {
-  if (!cell.flagged) {
+  if (!cell.flagged && !cell.revealed) {
       cell.textContent = 'F';
       cell.htmlClass = 'flagged';
       cell.flagged = true;
+      render(cell);
   } else if (cell.flagged && !cell.revealed) {
     cell.textContent = '';
     cell.htmlClass = '';
     cell.flagged = false;
+    render(cell);
   } else {
       console.log('can\'t do that')
   }
@@ -129,7 +140,7 @@ function handleClick(evt) {
     } else {
       openControlFlow(cell);
     }
-    renderSt();
+    // renderSt();
 };
 function adjacenters(x, y) {
     var maxW = props.widthInput - 1;

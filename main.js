@@ -13,7 +13,7 @@ let mainWindow
 
 
 function createWindow () {
-    mainWindow = new BrowserWindow({width: 250, height: 275})
+    mainWindow = new BrowserWindow({width: 375, height: 400})
     mainWindow.loadURL(url.format({
         pathname: path.join(__dirname, 'index.html'),
         protocol: 'file:',

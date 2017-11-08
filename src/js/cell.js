@@ -8,5 +8,9 @@ class Cell {
       this.textContent = '';
       this.htmlClass = '';
   }
+  updateState(id) {
+    var td = document.getElementById(id);
+    td.textContent = this.textContent;
+    td.className = this.htmlClass;
+  }
 }
-
