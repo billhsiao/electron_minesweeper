@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+  <dict>
+    <key>BuildMachineOSBuild</key>
+    <string>15E65</string>
+    <key>CFBundleDisplayName</key>
+    <string>minesweeper</string>
+    <key>CFBundleExecutable</key>
+    <string>minesweeper</string>
+    <key>CFBundleIconFile</key>
+    <string>electron.icns</string>
+    <key>CFBundleIdentifier</key>
+    <string>minesweeper</string>
+    <key>CFBundleInfoDictionaryVersion</key>
+    <string>6.0</string>
+    <key>CFBundleName</key>
+    <string>minesweeper</string>
+    <key>CFBundlePackageType</key>
+    <string>APPL</string>
+    <key>CFBundleShortVersionString</key>
+    <string>0.0.1</string>
+    <key>CFBundleVersion</key>
+    <string>0.0.1</string>
+    <key>DTSDKBuild</key>
+    <string>14D125</string>
+    <key>DTSDKName</key>
+    <string>macosx10.1010.10</string>
+    <key>DTXcode</key>
+    <string>0721</string>
+    <key>DTXcodeBuild</key>
+    <string>7C1002</string>
+    <key>LSApplicationCategoryType</key>
+    <string>public.app-category.developer-tools</string>
+    <key>LSMinimumSystemVersion</key>
+    <string>10.9.0</string>
+    <key>NSHighResolutionCapable</key>
+    <true/>
+    <key>NSMainNibFile</key>
+    <string>MainMenu</string>
+    <key>NSPrincipalClass</key>
+    <string>AtomApplication</string>
+    <key>NSSupportsAutomaticGraphicsSwitching</key>
+    <true/>
+    <key>NSHumanReadableCopyright</key>
+    <string>Copyright © 2017 bill</string>
+    <key>AsarIntegrity</key>
+    <string>{"checksums":{"app.asar":"caTTJt+EU8SbHMfBO7unDjdn0oLvKVWZywjjj4d6SfTMQ6QI3rr27SCtud+pHf4oOnJ6I13lcJeBTPPDWfAzwg==","electron.asar":"g87vAomgUo8Kt1csJoUHthdYmGc9u8VVORZ3yPcbm2fAOUlJdRlvK5r+13C7Uy+RGwtwxW20d97dp6plf0Zqgw=="}}</string>
+  </dict>
+</plist>

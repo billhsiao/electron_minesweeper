@@ -1,0 +1,10 @@
+version: 0.0.1
+files:
+  - url: minesweeper-0.0.1-mac.zip
+    sha512: q6S25i7B3od9dcF1zPRjkgjtXXABgE5wgmIKvX2bCGPu8qiJPaYqtAzpWrO2eMbvXb7l5XtVwS/pgzjY56NA0A==
+  - url: minesweeper-0.0.1.dmg
+    sha512: yL4FZl0X0WbpH/EdTEHtqOuYFPlzGGOmzZUt2uuuyZaLLkTZwbETmJu2sMgaUYnjDVc9y49aNcY7q4xdu3mjAA==
+    size: 41590745
+path: minesweeper-0.0.1-mac.zip
+sha512: q6S25i7B3od9dcF1zPRjkgjtXXABgE5wgmIKvX2bCGPu8qiJPaYqtAzpWrO2eMbvXb7l5XtVwS/pgzjY56NA0A==
+releaseDate: '2017-11-09T05:55:56.688Z'

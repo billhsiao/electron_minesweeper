@@ -1,11 +1,46 @@
 {
-    "name": "minesweeper",
-    "version": "0.1.0",
-    "main": "./main.js",
-    "scripts": {
-        "start": "electron ."
+  "name": "minesweeper",
+  "version": "0.0.1",
+  "license": "MIT",
+  "description": "mineschfvleeper",
+  "author": "bill <bill.hsiao@billhsiao.com>",
+  "main": "./main.js",
+  "scripts": {
+    "postinstall": "install-app-deps",
+    "start": "npm install && electron ./app",
+    "pack": "build --dir",
+    "dist": "build"
+  },
+  "build": {
+    "appId": "minesweeper",
+    "dmg": {
+      "contents": [
+        {
+          "x": 110,
+          "y": 150
+        },
+        {
+          "x": 240,
+          "y": 150,
+          "type": "link",
+          "path": "/Applications"
+        }
+      ]
     },
-    "devDependencies": {
-        "electron-prebuilt": "^1.4.13"
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ]
+    },
+    "win": {
+      "target": "squirrel",
+      "icon": "build/icon.ico"
     }
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "electron": "latest",
+    "electron-builder": "latest"
+  }
 }
